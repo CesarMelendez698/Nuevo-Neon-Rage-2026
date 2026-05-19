@@ -45,9 +45,9 @@ import feel from "../Img/Camisa2/feel.jpg";
 import feel2 from "../Img/Camisa2/feel2.png";
 import feel3 from "../Img/Camisa2/feel3.png";
 
-import hazlosonar from "../Img/Camisa2/hazlosonar.jpg";
-import hazlosonar2 from "../Img/Camisa2/hazlosonar2.png";
-import hazlosonar3 from "../Img/Camisa2/hazlosonar3.png";
+import hazlosonar from "../Img/Camisa2/Hazlosonar.jpg";
+import hazlosonar2 from "../Img/Camisa2/Hazlosonar2.png";
+import hazlosonar3 from "../Img/Camisa2/Hazlosonar3.png";
 
 // ============================
 // INTERFACE PRODUCT
