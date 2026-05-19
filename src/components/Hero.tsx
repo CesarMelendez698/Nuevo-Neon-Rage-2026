@@ -1,8 +1,7 @@
 import logoHero from '../Img/Bannermusicwebfinal.jpg';
 
 export default function Hero() {
-  
-  // Función opcional por si el scroll nativo de HTML falla con React Router
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById("Collection");
@@ -14,48 +13,61 @@ export default function Hero() {
   return (
     <section
       id="Home"
-      className="relative w-full h-screen overflow-hidden"
+      /* bg-black llena los espacios vacíos que deje la imagen al encogerse en celular */
+      className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center"
     >
-      {/* IMAGEN CON ZOOM INFINITO DESDE INDEX.CSS */}
+      {/* IMAGEN CONFIGURADA PARA VERSE COMPLETA (CONTAIN) */}
       <img
         src={logoHero}
         alt="Banner Music"
-        className="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
+        className="
+          absolute inset-0 
+          w-full h-full 
+          /* object-contain asegura que TODO el banner sea visible sin recortes */
+          object-contain 
+          object-center 
+          animate-slow-zoom
+        "
       />
 
-      {/* OVERLAY OSCURO */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      {/* OVERLAY OSCURO (Solo se aplica sobre la imagen) */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
 
-      {/* BOTÓN MÁS ABAJO Y PEQUEÑO */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 px-4 w-auto">
+      {/* CONTENEDOR DEL BOTÓN */}
+      <div className="
+        absolute 
+        bottom-12 sm:bottom-12 
+        left-1/2 -translate-x-1/2 
+        z-10 
+        px-6 sm:px-4 
+        w-full sm:w-auto 
+        max-w-xs sm:max-w-none
+      ">
         <a
           href="#Collection"
           onClick={handleScroll}
           className="
             block
-            px-5 py-2.5
-            text-[10px] sm:text-xs md:text-sm
-            uppercase tracking-[0.3em]
+            px-6 py-3 sm:px-5 sm:py-2.5
+            text-[11px] sm:text-xs md:text-sm
+            uppercase tracking-[0.25em] sm:tracking-[0.3em]
             font-bold
             text-white
             border border-purple-500
-            bg-black/40 backdrop-blur-md
+            bg-black/60 backdrop-blur-md
             rounded-md
             text-center
             whitespace-nowrap
             cursor-pointer
             
-            /* Animación suave de respiración en el botón */
             transition-all duration-500 ease-out
             animate-pulse hover:animate-none
             
-            /* Efectos Hover */
             hover:bg-purple-600
             hover:border-purple-600
             hover:shadow-[0_0_25px_rgba(168,85,247,0.8)]
             hover:scale-105
             
-            /* Efecto Click */
             active:scale-95
           "
         >
@@ -65,10 +77,3 @@ export default function Hero() {
     </section>
   );
 }
-
-
-
-
-
-
-
